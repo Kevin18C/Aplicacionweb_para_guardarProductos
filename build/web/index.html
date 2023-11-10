@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Guardar productos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/script.js"></script>
+        <link rel="stylesheet" href="Estilos/style.css" >
+    </head>
+    <body>
+        
+        <div class="container">
+        <div class="container1">
+            <form method="POST" id="form" name="form" action="NewServlet">
+                <h2>
+                    Registro de productos
+                </h2>
+                <div class="entrada">
+                    <label>Codigo del producto</label><br>
+                    <input type="number" name="codigo_producto" id="codigo_producto">
+                    <input type="hidden" id="control" name="control" value="GUARDAR">
+                </div>
+
+                <div class="entrada">
+                    <label>Nombre del producto</label><br>
+                    <input type="text" name="nombre_producto" id="nombre_producto">
+                </div>
+
+                <div class="entrada">
+                    <label>Precio</label><br>
+                    <input type="number" step="0.01" pattern="Q #.##" name="precio" id="precio">
+                </div>
+
+                <div class="entrada">
+                    <label>Existencia</label><br>
+                    <input type="number" name="existencia" id="existencia">
+                </div>
+
+                <div class="entrada">
+                    <label>Fecha de vencimiento</label><br>
+                    <input type="date" name="fecha_vencimiento" id="fecha_vencimiento">
+                </div>
+
+                <div class="entrada">
+                    <label>Marca</label><br>
+                    <select name="id_marca" id="id_marca">
+                        <option value="1">Dell</option>
+                        <option value="2">Lenovo</option>
+                        <option value="3">Razer</option>
+                        <option value="4">Etouch</option>
+                        <option value="5">Intel</option>
+                        <option value="6">HP</option>
+                        <option value="7">Nike</option>
+                        <option value="8">Puma</option>
+                        <option value="9">Adidas</option>
+                        <option value="10">Castore</option>
+                    </select>
+                </div>
+
+                <div class="entrada">
+                    <label>Categoria</label><br>
+                    <select name="id_categoria" id="id_categoria">
+                        <option value="1">Tecnologia</option>
+                        <option value="2">Gaming</option>
+                        <option value="3">Salud</option>
+                        <option value="4">Deportes</option>
+                    </select>
+                </div>
+
+                <button class="btn" type="submit" >Guardar</button>
+                <button class="btn" Type="button" onclick="limpiarFormulario();" >Limpiar campos</button>
+                <button class="btn" type="button" onclick="enviarFormularioOpcion2()">Guardar con JS</button>
+                <button class="btn" type="button" onclick="limpiarTabla()">Cancelar</button>
+                <button class="btn" type="button" onclick="mostrarProductos()">Mostrar</button>
+            </form>
+        </div>
+        
+        <div  id="container2">
+            <table id="tabla1">
+                <thead >
+                    <tr>
+                        <td>Codigo del producto</td>
+                        <td>Nombre del producto</td>
+                        <td>Precio</td>
+                        <td>Existencia</td>
+                        <td>Fecha de vencimiento</td>
+                        <td>id_Marca</td>
+                        <td>id_Categoria</td>
+                        <td>Accion</td>
+                    </tr>
+                </thead>
+                
+                <tbody id="tabla">
+
+                </tbody>                
+                
+            </table>
+        </div>
+     </div>
+    </body>
+</html>
